@@ -1,12 +1,16 @@
+from typing import List
+
+from constants import LEN_MAX_DEFAULT, LEN_MIN_DEFAULT
+
 class MotherList():
     code: int = 0
     current_password: str = ''
-    clients_served: list = []
-    norm_list: list = []
+    clients_served: List[str] = []
+    norm_list: List[str] = []
 
     def reset_list(self) -> None:
-        if self.code >= 100:
-            self.code = 0
+        if self.code >= LEN_MAX_DEFAULT:
+            self.code = LEN_MIN_DEFAULT
         else:
             self.code += 1
 
